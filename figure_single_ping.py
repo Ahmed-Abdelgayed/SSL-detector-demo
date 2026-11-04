@@ -1,8 +1,8 @@
-"""The paper's single-ping figure: the detector on one Thursday-morning ping, with the echogram around it.
+"""The paper's single-ping figure: the detector on one Thursday FM ping, with the echogram around it.
 
     python figure_single_ping.py [output folder] [--case-study]
 
-Panel A: half an hour of the Thursday CW echogram (6 June 2024, 09:00 to 09:30 UTC) with the per-ping bounds
+Panel A: half an hour of the Thursday FM echogram (6 June 2024, 12:50 to 13:20 UTC) with the per-ping bounds
 (dots) and their running median over ssl.TUNED_MEDIAN pings (lines; no median with --case-study). Panel B:
 one ping, with the raw and smoothed profiles, the thresholds, any masked strong echoes, the chosen layer peak,
 the other candidates and the bounds. Uses the tuned settings (ssl.TUNED), or the case-study settings with
@@ -20,9 +20,9 @@ from scipy.signal import find_peaks
 
 import ssl_detector as ssl
 
-DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "autonaut_thu_morning.npz")
-START, END = np.datetime64("2024-06-06T09:00"), np.datetime64("2024-06-06T09:30")
-PING = np.datetime64("2024-06-06T09:14:16")   # the ping in panel B (the one closest to this time)
+DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "autonaut_thu_fm.npz")
+START, END = np.datetime64("2024-06-06T12:50"), np.datetime64("2024-06-06T13:20")
+PING = np.datetime64("2024-06-06T13:04:47.623")   # the ping in panel B (the one of the first version of the figure)
 ZMAX = 100              # m shown in both panels
 VMIN, VMAX = -85, -55   # echogram colour range
 PAD = 60                # pings run on each side of the window, so the running median has no edge effect
