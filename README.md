@@ -18,8 +18,9 @@ them.
 |---|---|
 | `ssl_detector_demo.ipynb` | The notebook: the data, what each setting does, and an interactive tuning panel |
 | `ssl_detector.py` | The detector, in one short file |
-| `data/autonaut_tue_night.npz` | 2.5 hours of AutoNaut echosounder data: one layer near 20 m, seabed in range (see `data/README.md`) |
-| `data/autonaut_wed_night.npz` | 4.3 hours: a layer moving between 45 and 90 m, deeper water |
+| `data/autonaut_thu_morning.npz` | One hour of AutoNaut echosounder data: a strong layer near 15 m and a weaker one near 55 m (see `data/README.md`) |
+| `data/autonaut_wed_night.npz` | 4.3 hours: a layer moving between 45 and 90 m |
+| `figure_single_ping.py` | Makes the paper's single-ping figure from the Thursday data |
 | `tests/` | Tests of the detector |
 
 ## The method
@@ -67,19 +68,19 @@ notebook uses a running median (`ssl.running_median`), which is not part of the 
 | `min_prominence` | 0 dB (off) | 1 dB | How far a peak must stand above its surroundings |
 | `min_width` | 0 m (off) | 1 m | Minimum layer thickness |
 | `floor` | off | on | Bounds stop at `sv_min` |
-| running median | | 23 pings (`ssl.TUNED_MEDIAN`) | Filter over pings, after the detector |
+| running median | | 39 pings (`ssl.TUNED_MEDIAN`) | Filter over pings, after the detector |
 
 - **Case study:** the settings of the paper's case study, chosen by a parameter sweep.
-- **Tuned:** tuned by hand on other stretches of the same survey (among them the Thursday CW data, which are
-  not included here). They work well on most stretches, but not on Wednesday night: their 81.5 m bottom
-  cuts off the layer there when it sinks (see section 9 of the notebook).
+- **Tuned:** tuned by hand on the Thursday CW data, which the Thursday stretch here is part of. They work
+  well on most stretches of the survey, but not on Wednesday night: their 81.5 m bottom cuts off the layer
+  there when it sinks (see section 9 of the notebook).
 
 The echosounder was not calibrated, so these Sv thresholds apply to this instrument only.
 
 ```python
 import ssl_detector as ssl
 
-d = ssl.load_data("data/autonaut_tue_night.npz")   # sv (n_ping, n_depth) in dB, depth, time, lat, lon
+d = ssl.load_data("data/autonaut_thu_morning.npz")   # sv (n_ping, n_depth) in dB, depth, time, lat, lon
 r = ssl.detect(d["sv"], d["depth"], **ssl.TUNED)
 z_u = ssl.running_median(r["z_u"], ssl.TUNED_MEDIAN)
 r["z_u"], r["z_l"], r["z_peak"], r["sv_peak"], r["intensity"], r["found"]

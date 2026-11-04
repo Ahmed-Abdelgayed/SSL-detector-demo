@@ -46,12 +46,12 @@ DEFAULTS = dict(
     floor=False,         # -   raise the profile to sv_min, so the bounds stop there
 )
 
-# Settings tuned by hand on other stretches of the same survey (among them the Thursday CW data, not included
-# here): good on most stretches, but not on Wednesday night (see the notebook). Use them with a running median
-# over 23 pings (running_median(x, TUNED_MEDIAN)).
+# Settings tuned by hand on the Thursday CW data (the Thursday stretch in data/ is part of it): good on most
+# stretches of the survey, but not on Wednesday night (see the notebook). Use them with a running median over
+# 39 pings (running_median(x, TUNED_MEDIAN)).
 TUNED = dict(min_depth=2.5, max_depth=81.5, sigma=2.0, sv_min=-80.0, sv_max=-60.5, rel_height=0.95,
              min_prominence=1.0, min_width=1.0, floor=True)
-TUNED_MEDIAN = 23
+TUNED_MEDIAN = 39
 
 
 def load_data(path="data/autonaut_wed_night.npz"):
