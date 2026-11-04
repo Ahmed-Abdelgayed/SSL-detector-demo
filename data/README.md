@@ -5,8 +5,8 @@ Mausund/Frøan, Norway, 5 June 2024 21:26 to 6 June 2024 01:46 UTC.
 
 - Simrad EK80 WBT Mini with a 200 kHz split-beam transducer (ES200-7CDK), CW pulses of 1.024 ms at 75 W,
   about one ping every 3 s. The echosounder was not calibrated.
-- Sv computed with Echopype from 26 raw files (`raw_files`), then averaged into 0.1 m depth bins (mean of
-  the linear values) from 0.45 to 99.95 m. Depth is the range from the transducer; the transducer depth is
+- Sv computed with Echopype (Lee et al. 2024, https://doi.org/10.1093/icesjms/fsae133) from 26 raw files
+  (`raw_files`), then averaged into 0.1 m depth bins (mean of the linear values) from 0.45 to 99.95 m. Depth is the range from the transducer; the transducer depth is
   not added. The empty or blank bins in the first 0.4 m are left out.
 - Position from the vehicle's navigation log.
 

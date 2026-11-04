@@ -30,3 +30,55 @@ preferred-citation:
       given-names: Leif
     - family-names: Ludvigsen
       given-names: Martin
+references:
+  - type: article
+    title: "First recording of a bathypelagic deep scattering layer in the Bay of Biscay"
+    authors:
+      - family-names: Peña
+        given-names: Marian
+      - family-names: Munuera-Fernández
+        given-names: Itziar
+      - family-names: Nogueira
+        given-names: Enrique
+      - family-names: González-Quirós
+        given-names: Rafael
+    journal: "Progress in Oceanography"
+    year: 2021
+    volume: 198
+    start: 102669
+    doi: 10.1016/j.pocean.2021.102669
+  - type: article
+    title: "SciPy 1.0: fundamental algorithms for scientific computing in Python"
+    authors:
+      - family-names: Virtanen
+        given-names: Pauli
+      - family-names: Gommers
+        given-names: Ralf
+      - family-names: Oliphant
+        given-names: Travis E.
+    journal: "Nature Methods"
+    year: 2020
+    volume: 17
+    start: 261
+    end: 272
+    doi: 10.1038/s41592-019-0686-2
+  - type: article
+    title: "Interoperable and scalable echosounder data processing with Echopype"
+    authors:
+      - family-names: Lee
+        given-names: Wu-Jung
+      - family-names: Setiawan
+        given-names: Landung
+      - family-names: Tuguinay
+        given-names: Caesar
+      - family-names: Mayorga
+        given-names: Emilio
+      - family-names: Staneva
+        given-names: Valentina
+    journal: "ICES Journal of Marine Science"
+    year: 2024
+    volume: 81
+    issue: 10
+    start: 1941
+    end: 1951
+    doi: 10.1093/icesjms/fsae133

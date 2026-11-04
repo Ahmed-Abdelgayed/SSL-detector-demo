@@ -1,7 +1,9 @@
 """Minimal per-ping detector of the main sound scattering layer (SSL).
 
 This is the detector as described in the paper (section "Case-study implementation of edge
-processing"), with nothing added.
+processing"), with nothing added. It follows the principle of the Peaks method of Peña et al. (2021,
+Progress in Oceanography 198: 102669, https://doi.org/10.1016/j.pocean.2021.102669): a layer is a peak in
+the smoothed Sv profile of a single ping, and its edges mark the layer's vertical extent.
 
 Input: Sv in dB on an ascending, evenly spaced depth grid, with no NaN values. Putting the profiles on
 such a grid is the paper's resampling step; the demo data are already averaged into 0.1 m bins (see

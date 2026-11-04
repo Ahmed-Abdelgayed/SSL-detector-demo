@@ -22,7 +22,9 @@ small dataset and a notebook that explains each setting and lets you tune them.
 
 ## The detector
 
-For each ping:
+The detector follows the principle of the Peaks method of Peña et al. (2021): a layer is a peak in the
+smoothed Sv profile of a single ping, and its edges mark the layer's vertical extent. The peaks are found
+with SciPy (Virtanen et al. 2020). For each ping:
 
 1. Keep the profile within the depth range `min_depth` to `max_depth`.
 2. Smooth it along depth with a Gaussian filter of width `sigma`.
@@ -67,6 +69,17 @@ jupyter lab ssl_detector_demo.ipynb
 ```
 
 Run the tests with `pip install pytest`, then `pytest`.
+
+## References
+
+- Peña M, Munuera-Fernández I, Nogueira E, González-Quirós R (2021). First recording of a bathypelagic
+  deep scattering layer in the Bay of Biscay. *Progress in Oceanography* 198: 102669.
+  https://doi.org/10.1016/j.pocean.2021.102669
+- Virtanen P, Gommers R, Oliphant TE, et al. (2020). SciPy 1.0: fundamental algorithms for scientific
+  computing in Python. *Nature Methods* 17: 261–272. https://doi.org/10.1038/s41592-019-0686-2
+- Lee W-J, Setiawan L, Tuguinay C, Mayorga E, Staneva V (2024). Interoperable and scalable echosounder data
+  processing with Echopype. *ICES Journal of Marine Science* 81(10): 1941–1951.
+  https://doi.org/10.1093/icesjms/fsae133 (used to compute Sv for the demo data)
 
 ## Licence
 
