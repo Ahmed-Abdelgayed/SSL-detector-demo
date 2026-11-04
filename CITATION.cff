@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "SSL detector demo"
+type: software
+authors:
+  - family-names: Abdelgayed
+    given-names: Ahmed
+    affiliation: "Norwegian University of Science and Technology, Department of Marine Technology"
+repository-code: "https://github.com/Ahmed-Abdelgayed/SSL-detector-demo"
+license: MIT
+preferred-citation:
+  type: article
+  title: "A Remote Operations Center Framework for Heterogeneous Robotic Zooplankton Sampling: System Design and Field Case Study"
+  authors:
+    - family-names: Barstein
+      given-names: Karoline
+    - family-names: Rogge
+      given-names: Rabea
+    - family-names: Olaisen
+      given-names: André
+    - family-names: Abdelgayed
+      given-names: Ahmed
+    - family-names: Dunn
+      given-names: Muriel
+    - family-names: Stevenson-Jones
+      given-names: Ralph
+    - family-names: Davies
+      given-names: Emlyn
+    - family-names: Grimsmo
+      given-names: Leif
+    - family-names: Ludvigsen
+      given-names: Martin
